@@ -1,38 +1,65 @@
-.App {
-  text-align: center;
+/* Add this CSS in your Practice.css or inside <style> if inline */
+body{
+  background-color: #b3ad90;
+}
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 60px); /* smaller box areas */
+  grid-template-rows: repeat(4, 60px);
+  gap: 2px; /* just tiny gap */
+  justify-content: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.box, .box1 {
+  width: 58px; /* slightly smaller than 60px grid cell */
+  height: 58px;
+  border: 1px solid black;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: 28px;
+  cursor: pointer;
+  background-color: #ffffff;
+}
+
+.box1 {
+  background-color: #d1d8e0;
+}
+
+
+.box:hover, .box1:hover {
+  background-color: #e0e0e0;
+  transform: scale(1.05);
+}
+
+.box1 {
+  background-color: #d1d8e0;
+}
+
+h2 {
+  font-family: Arial, sans-serif;
+  color: #333;
+  margin-top: 20px;
+}
+
+h3 {
+  font-family: Arial, sans-serif;
+  color: rgb(0, 5, 0);
+  margin-bottom: 10px;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #202fcf;
   color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button:hover {
+  background-color: #45a049;
 }

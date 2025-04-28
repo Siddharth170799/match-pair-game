@@ -22,6 +22,8 @@ const Practice = () => {
       setDisplayMessage("You Won");
       setMoves(moves + 1);
       setDisabled1(true);
+      setSelectedItem1("");
+      setSelectedItem2("");
       return;
     }
 
@@ -90,7 +92,7 @@ const Practice = () => {
             setRestartGame(!restartGame);
             setMoves(0);
             setDisplayMessage("");
-            setDisabled1(false)
+            setDisabled1(false);
           }}
         >
           Reset

@@ -1,53 +1,17 @@
-// import React, { useEffect, useState } from "react";
 
-// const Box = ({ item, handleChange, disabled1 }) => {
-//   const [display, setDisplay] = useState(false);
-
-//   const handleDisplay = () => {
-//     setDisplay(true);
-//     setTimeout(() => {
-//       setDisplay(false);
-//     }, 2000);
-//   };
-
-//   return (
-//     <>
-//       {display ? (
-//         <div
-//           key={item.id}
-//           className="box"
-//           disabled={disabled1}
-//           onClick={() => {
-//             handleChange(item.id, item.value);
-//             handleDisplay();
-//           }}
-//         >
-//           {item.value}
-//         </div>
-//       ) : (
-//         <div
-//           key={item.id}
-//           className="box1"
-//           disabled={disabled1}
-//           onClick={() => {
-//             handleChange(item.id, item.value);
-//             handleDisplay();
-//           }}
-//         ></div>
-//       )}
-//     </>
-//   );
-// };
-
-// export default Box;
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const Box = ({ item, handleChange, disabled1 }) => {
   const [display, setDisplay] = useState(false);
+  const timerRef= useRef(null)
 
   const handleDisplay = () => {
+    if(disabled1 == true){
+        clearTimeout(timerRef.current)
+        return
+    }
     setDisplay(true);
-    setTimeout(() => {
+   timerRef.current = setTimeout(() => {
       setDisplay(false);
     }, 2000);
   };
